@@ -1,0 +1,24 @@
+@mixin flexIt($justify, $align, $direction: row, $gap: 0) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin gridIt($row, $column, $justify, $align, $gap: 0) {
+    display: grid;
+    grid-template-rows: $row;
+    grid-template-columns: $column;
+    justify-items: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin resetBtn() {
+    display: block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

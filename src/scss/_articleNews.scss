@@ -1,0 +1,15 @@
+@use './abstract/' as abs;
+
+.article-container {
+    @include abs.flexIt(stretch, stretch, row, 3em 1.5em);
+    flex-flow: row wrap;
+    width: min(90%, 1440px);
+    margin-block: 4em;
+}
+
+@media (min-width: 1080px) {
+    .article-container {
+        width: min(80%, 1440px);
+        justify-content: space-between;
+    }
+}

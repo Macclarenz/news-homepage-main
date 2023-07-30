@@ -1,0 +1,64 @@
+@use './abstract/' as abs;
+
+.side-news-container {
+    background-color: abs.$very-dark-blue;
+    padding: 1.5em;
+    margin-block: 3.5em 1em;
+
+    .side-news-heading-text {
+        color: abs.$soft-orange;
+        font-size: 30px;
+        font-weight: abs.$inter-bold;
+        margin-bottom: 1em;
+    }
+
+    .side-news {
+        &:first-of-type {
+            padding-bottom: 2em;
+        }
+
+        &:not(:first-of-type) {
+            border-top: 1px solid abs.$off-white;
+            padding-block: 2em;
+        }
+
+        h3 {
+            color: abs.$off-white;
+            cursor: pointer;
+            margin-bottom: 0.5em;
+            transition: all 400ms ease;
+
+            &:hover {
+                color: abs.$soft-orange;
+            }
+        }
+
+        p {
+            color: abs.$grayish-blue;
+            font-size: abs.$paragraph-size;
+            line-height: 1.6;
+        }
+    }
+
+    #sideNews2 {
+        border-color: fade-out($color: #c2c2c2, $amount: 0.8);
+    }
+}
+
+@media (min-width: 1080px) {
+    .side-news-container {
+        padding: 1.75em;
+        margin-block: 0;
+
+        .side-news-heading-text {
+            font-size: 42px;
+            margin-bottom: 0.75em;
+        }
+
+        .side-news {
+            &:last-of-type {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

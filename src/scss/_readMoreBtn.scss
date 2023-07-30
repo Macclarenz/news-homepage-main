@@ -1,0 +1,27 @@
+@use './abstract/' as abs;
+
+#headlineReadMoreBtn {
+    background-color: abs.$soft-red;
+    color: abs.$off-white;
+    display: block;
+    letter-spacing: 5px;
+    font-size: abs.$paragraph-size;
+    font-weight: abs.$inter-extra-bold;
+    margin-block: 1.5em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 400ms ease-out;
+    width: min(55%, 250px);
+
+    &:hover {
+        background-color: abs.$very-dark-blue;
+    }
+}
+
+@media (min-width: 1080px) {
+    #headlineReadMoreBtn {
+        width: min(100%, 220px);
+    }
+}

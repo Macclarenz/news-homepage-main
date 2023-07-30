@@ -1,0 +1,18 @@
+@use './abstract/' as abs;
+
+#navCloseBtn {
+    @include abs.resetBtn();
+    margin-bottom: 5em;
+    margin-left: auto;
+    transition: all 400ms ease-out;
+
+    &:hover {
+        rotate: 15deg;
+    }
+}
+
+@media (min-width: 768px) {
+    #navCloseBtn {
+        display: none;
+    }
+}

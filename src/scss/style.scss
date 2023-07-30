@@ -1,0 +1,30 @@
+@use './closeMenuBtn';
+@use './menuBtn';
+@use './main';
+@use './heading';
+@use './headline';
+@use './readMoreBtn';
+@use './sideNews';
+@use './articleNews';
+@use './article';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+#root {
+    display: grid;
+    justify-items: center;
+}
+
+.headline-image {
+    width: 100%;
+}

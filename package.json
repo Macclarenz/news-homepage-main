@@ -1,0 +1,21 @@
+{
+  "name": "news-homepage-main",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "description": "![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.64.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.7"
+  }
+}

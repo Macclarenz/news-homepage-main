@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+// primary
+$soft-orange: hsl(35, 77%, 62%);
+$soft-red: hsl(5, 85%, 63%);
+
+// neutral
+$off-white: hsl(36, 100%, 99%);
+$grayish-blue: hsl(233, 8%, 79%);
+$dark-grayish-blue: hsl(236, 13%, 42%);
+$very-dark-blue: hsl(240, 100%, 5%);
+
+// body size
+$paragraph-size: 15px;
+
+$inter-weight: (
+    inter-regular: 400,
+    inter-bold: 700,
+    inter-extra-bold: 800
+);
+
+$inter-regular: map-get($inter-weight, inter-regular);
+$inter-bold: map-get($inter-weight, inter-bold);
+$inter-extra-bold: map-get($inter-weight, inter-extra-bold);

@@ -1,0 +1,130 @@
+@use './abstract' as abs;
+
+.header-container {
+    @include abs.flexIt(space-between, center);
+    padding-block: 2em;
+    width: min(90%, 1440px);
+
+    .nav-container {
+        $indices: 1,
+        2,
+        3,
+        4,
+        5;
+
+        @include abs.flexIt(flex-start, flex-start, column, 1.5em);
+        background-color: abs.$off-white;
+        position: fixed;
+        padding: 1.5em;
+        height: 100vh;
+        width: 70vw;
+        top: 0;
+        right: -100%;
+        transition: all 400ms ease-out;
+        z-index: 5;
+
+        &[open] {
+            right: 0;
+
+            a {
+                opacity: 1;
+            }
+        }
+
+        a {
+            color: abs.$very-dark-blue;
+            opacity: 0;
+            position: relative;
+            text-decoration: none;
+            transition: all 400ms ease;
+
+            &::before {
+                content: "";
+                background-color: abs.$soft-red;
+                bottom: 0;
+                scale: 0 1;
+                position: absolute;
+                left: 0;
+                margin-bottom: -3px;
+                height: 3px;
+                width: 100%;
+                transform-origin: left bottom;
+                transition: all 400ms ease-out;
+            }
+
+            &:hover::before {
+                scale: 1;
+            }
+        }
+
+        @each $index in $indices {
+            #navLink-#{$index} {
+                transition-delay: 100ms * $index;
+            }
+        }
+    }
+
+    .nav-backdrop {
+        display: block;
+        background-color: transparent;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 1;
+        transition: all 400ms ease;
+
+        &[open] {
+            background-color: rgba(0, 0, 0, 0.487);
+            pointer-events: all;
+        }
+    }
+}
+
+@media (min-width: 1080px) {
+    .header-container {
+        width: min(80%, 1440px);
+    }
+}
+
+@media (min-width: 768px) {
+    .header-container {
+        padding-block: 5em 3.5em;
+
+        .nav-container,
+        .nav-container a {
+            all: unset;
+        }
+
+        .nav-container {
+            @include abs.flexIt(space-between, center, row, 2.5em);
+
+            .nav-link {
+                color: abs.$dark-grayish-blue;
+                font-size: 18px;
+                cursor: pointer;
+                transition: all 400ms ease;
+
+                &:hover {
+                    color: abs.$soft-red;
+                }
+            }
+
+            $indices: 1, 2, 3, 4, 5;
+
+            @each $index in $indices {
+                #navLink-#{$index} {
+                    transition-delay: 0ms;
+                }
+            }
+        }
+
+        .nav-backdrop {
+            display: none;
+        }
+    }
+}
